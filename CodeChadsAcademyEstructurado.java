@@ -1,4 +1,4 @@
-public class ChadsCodeAcademy {
+public class CodeChadsAcademyEstructurado {
 	public static void main(String[] args) {	
         int[][] alumnos = {
             {80, 70, 59, 0, 0},  // Alumno 1: [Nota 1, Nota 2, Nota 3]
