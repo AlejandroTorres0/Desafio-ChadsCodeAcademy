@@ -16,8 +16,7 @@ public class Estudiante {
 
     @Override
     public String toString() {
-        return "Estudiante " +
-                "'" + nombre + "' "
+        return "'" + nombre + "' "
                 + listaPruebas;
     }
     
@@ -84,11 +83,14 @@ public class Estudiante {
 
     public int saltosAcumulados() {
         int saltosAcum = 0;
-        int notaAnterior = 0;
+        int salto = 0;
+        Prueba pruebaAnt = null;
         for (Prueba prueba: listaPruebas) {
-            int salto = prueba.getPuntaje() - notaAnterior;
+            if (!(pruebaAnt == null)) {
+                salto = prueba.getPuntaje() - pruebaAnt.getPuntaje();
+            }
             saltosAcum =  saltosAcum + salto;
-            notaAnterior = prueba.getPuntaje();
+            pruebaAnt = prueba;
         }
         return saltosAcum;
     }

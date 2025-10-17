@@ -28,9 +28,9 @@ public class Main {
         estudiante3.generarNotasFaltantes();
 
         Estudiante estudiante4 = new Estudiante("Pepe");
-        Prueba prueba13 = new Prueba(61);
-        Prueba prueba23 = new Prueba(73);
-        Prueba prueba33 = new Prueba(43);
+        Prueba prueba13 = new Prueba(60);
+        Prueba prueba23 = new Prueba(60);
+        Prueba prueba33 = new Prueba(60);
         estudiante4.agregarPrueba(prueba13);
         estudiante4.agregarPrueba(prueba23);
         estudiante4.agregarPrueba(prueba33);

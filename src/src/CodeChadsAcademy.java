@@ -45,13 +45,13 @@ public class CodeChadsAcademy {
             }
 
         }
-        System.out.printf("El alumno con mayor promedio fue el alumno " + estudiantePromedioMasAlto + " con %f de promedio%n",
+        System.out.printf("El alumno con mayor promedio fue " + estudiantePromedioMasAlto + " con %f de promedio%n",
                 promedioMasAlto);
 
-        System.out.printf("El alumno con el peor rendimiento en la prueba 3 fue el estudiante " + estudiantePeorRendimientoPrueba3 + "con %d puntos%n",
+        System.out.printf("El alumno con el peor rendimiento en la prueba 3 fue " + estudiantePeorRendimientoPrueba3 + " con %d puntos%n",
                 peorRendimientoPrueba3);
 
-        System.out.printf("El alumno más regular fue el alumno "+ estudianteMasRegular + "%n");
+        System.out.printf("El alumno más regular fue " + estudianteMasRegular + "%n");
     }
 
     public void evaluarTodos() {
