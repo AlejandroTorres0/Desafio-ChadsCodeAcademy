@@ -61,24 +61,24 @@ public class Estudiante {
 
     public void mayorSalto() {
         int mayorSalto = 0;
-        int salto = 0;
-        Prueba pruebaAnt = null;
-        Prueba pruebaAntMayorSalto = new Prueba(0);
-        Prueba pruebaMayorSalto = new Prueba(0);
-        for (Prueba prueba: listaPruebas) {
-            if (!(pruebaAnt ==  null)) {
-                salto = prueba.getPuntaje() - pruebaAnt.getPuntaje();
-            }
+        int posPruebaAnterior = 0;
+        int posPruebaActual = 0;
+
+        for (int i = 1; i < listaPruebas.size(); i++) {
+            int puntajeActual = listaPruebas.get(i).getPuntaje();
+            int puntajeAnterior = listaPruebas.get(i - 1).getPuntaje();
+
+            int salto = Math.abs(puntajeActual - puntajeAnterior);
 
             if (salto > mayorSalto) {
                 mayorSalto = salto;
-                pruebaAntMayorSalto = pruebaAnt;
-                pruebaMayorSalto = prueba;
+                posPruebaAnterior = i - 1;
+                posPruebaActual = i;
             }
-            pruebaAnt = prueba;
         }
-        System.out.printf("El mayor salto de puntos de " + nombre + " fue de " + mayorSalto + " puntos %n");
-        System.out.printf("Y fue entre de la prueba " + (listaPruebas.indexOf(pruebaAntMayorSalto) + 2) + " y " + (listaPruebas.indexOf(pruebaMayorSalto) + 2) + "%n");
+
+        System.out.printf("El mayor salto de puntos de '" + nombre + "' fue de " + mayorSalto + " puntos %n");
+        System.out.printf("Y fue entre la prueba %d y la prueba %d.%n", posPruebaAnterior + 1, posPruebaActual + 1);
     }
 
     public int saltosAcumulados() {
@@ -111,11 +111,11 @@ public class Estudiante {
         if (sumaPuntajes >= 450 ) {
             System.out.printf(nombre + " es un Stone Chad definitivo 💪%n");
         }
-        else if ((sumaPuntajes >= 250) && (sumaPuntajes <= 349)) {
-            System.out.printf(nombre + " es un Soft Chad%n");
-        }
         else if (sumaPuntajes >= 350) {
             System.out.printf(nombre + " es un Chad%n");
+        }
+        else if (sumaPuntajes >= 250) {
+            System.out.printf(nombre + " es un Soft Chad%n");
         }
         else {
             System.out.printf(nombre + " es un Normie total 😢%n");
